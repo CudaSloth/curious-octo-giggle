@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D7EEE6A0-40C3-495A-84BA-DCFF936E8195}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardGame", "src\CardGame\CardGame.csproj", "{CF078B89-D6A0-470A-8484-071A49D43529}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReversingString", "src\ReversingString\ReversingString.csproj", "{E06A068C-A811-4A40-B525-64778A867B01}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B4022A7A-A394-4CCC-9609-61EC204031B0}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3DCEAEB1-902F-4F13-94D1-6EC005C18CB1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReverseString.Tests", "tests\ReverseString.Tests\ReverseString.Tests.csproj", "{3C97066B-C39C-46A4-82FC-B3C421879E7F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardGame.Tests", "tests\CardGame.Tests\CardGame.Tests.csproj", "{1C8FA6EA-A4D7-4946-904C-1B78259F99D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF078B89-D6A0-470A-8484-071A49D43529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF078B89-D6A0-470A-8484-071A49D43529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF078B89-D6A0-470A-8484-071A49D43529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF078B89-D6A0-470A-8484-071A49D43529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E06A068C-A811-4A40-B525-64778A867B01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E06A068C-A811-4A40-B525-64778A867B01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E06A068C-A811-4A40-B525-64778A867B01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E06A068C-A811-4A40-B525-64778A867B01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C97066B-C39C-46A4-82FC-B3C421879E7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C97066B-C39C-46A4-82FC-B3C421879E7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C97066B-C39C-46A4-82FC-B3C421879E7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C97066B-C39C-46A4-82FC-B3C421879E7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C8FA6EA-A4D7-4946-904C-1B78259F99D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C8FA6EA-A4D7-4946-904C-1B78259F99D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C8FA6EA-A4D7-4946-904C-1B78259F99D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C8FA6EA-A4D7-4946-904C-1B78259F99D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CF078B89-D6A0-470A-8484-071A49D43529} = {D7EEE6A0-40C3-495A-84BA-DCFF936E8195}
+		{E06A068C-A811-4A40-B525-64778A867B01} = {D7EEE6A0-40C3-495A-84BA-DCFF936E8195}
+		{3C97066B-C39C-46A4-82FC-B3C421879E7F} = {3DCEAEB1-902F-4F13-94D1-6EC005C18CB1}
+		{1C8FA6EA-A4D7-4946-904C-1B78259F99D2} = {3DCEAEB1-902F-4F13-94D1-6EC005C18CB1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E2928D1B-E0FD-47C3-9C5C-DC5D7913D56F}
+	EndGlobalSection
+EndGlobal
