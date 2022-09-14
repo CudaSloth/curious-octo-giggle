@@ -53,22 +53,33 @@ namespace CodingChallenge.CardGame
             Random rnd = new Random();
 
             //Split deck
-            foreach(Card c in _deck)
+            for (int i = 0; i < 52; ++i)
             {
-                if(_deck.Count % 2 == 0)
+                if(i % 2 == 0)
                 {
-                    _buffer1.Add(c);
-                    _deck.Remove(c);
+                    _buffer1.Add(_deck.ElementAt(i));
+                    //Console.WriteLine("Even element added to Buffer1!   Card[{0}] DeckCount: {1}  Buffer1Count: {2}", _buffer1.ElementAt(_buffer1.Count - 1).ToString(), _deck.Count, _buffer1.Count);
                 }
-                else
+                if(i % 2 == 1)
                 {
-                    _buffer2.Add(c);
-                    _deck.Remove(c);
+                    _buffer2.Add(_deck.ElementAt(i));
+                    //Console.WriteLine("Odd element added to Buffer2!   Card[{0}] DeckCount: {1}  Buffer2Count: {2}", _buffer2.ElementAt(_buffer2.Count - 1).ToString(), _deck.Count, _buffer2.Count);
                 }
             }
+            _deck.Clear();
+
+            /*Console.WriteLine("==========PRE SORT======================================================================");
+            for(int i = 0; i < 26; ++i)
+            {
+                Console.WriteLine("Buffer1 at element [{0}] = {1}  Suit: {2}  Value: {3}", i, _buffer1.ElementAt(i).ToString(), _buffer1.ElementAt(i).Suit, _buffer1.ElementAt(i).Value);
+            }
+            for (int i = 0; i < 26; ++i)
+            {
+                Console.WriteLine("Buffer2 at element [{0}] = {1}  Suit: {2}  Value: {3}", i, _buffer2.ElementAt(i).ToString(), _buffer2.ElementAt(i).Suit, _buffer2.ElementAt(i).Value);
+            }*/
 
             //Shuffle buffers
-            foreach(Card c in _buffer1)
+            for (int k = 0; k < 26; ++k)
             {
                 int i = rnd.Next(_buffer1.Count);
                 int j = rnd.Next(_buffer2.Count);
@@ -83,20 +94,30 @@ namespace CodingChallenge.CardGame
                 _buffer2.Add(t1);
             }
 
+            /*Console.WriteLine("==========POST SORT======================================================================");
+            for (int i = 0; i < 26; ++i)
+            {
+                Console.WriteLine("Buffer1 at element [{0}] = {1}  Suit: {2}  Value: {3}", i, _buffer1.ElementAt(i).ToString(), _buffer1.ElementAt(i).Suit, _buffer1.ElementAt(i).Value);
+            }
+            for (int i = 0; i < 26; ++i)
+            {
+                Console.WriteLine("Buffer2 at element [{0}] = {1}  Suit: {2}  Value: {3}", i, _buffer2.ElementAt(i).ToString(), _buffer2.ElementAt(i).Suit, _buffer2.ElementAt(i).Value);
+            }*/
+
             //Join deck
-            foreach (Card c in _buffer1)
+            for (int i = 0; i < 26; ++i)
             {
-                _deck.Add(c);
-                _buffer1.Remove(c);
+                _deck.Add(_buffer1.ElementAt(i));
             }
-            foreach (Card c in _buffer2)
+            for (int i = 0; i < _buffer2.Count; ++i)
             {
-                _deck.Add(c);
-                _buffer2.Remove(c);
+                _deck.Add(_buffer2.ElementAt(i));
             }
+            _buffer1.Clear();
+            _buffer2.Clear();
 
             //Last Shuffle
-            foreach (Card c in _deck)
+            for (int j = 0; j < 52; ++j)
             {
                 int i = rnd.Next(_deck.Count);
 
@@ -106,6 +127,12 @@ namespace CodingChallenge.CardGame
 
                 _deck.Add(t);
             }
+
+            /*Console.WriteLine("==========MAIN DECK POST SORT======================================================================");
+            for (int i = 0; i < _deck.Count; ++i)
+            {
+                Console.WriteLine("DeckMain at element [{0}] = {1}  Suit: {2}  Value: {3}", i, _deck.ElementAt(i).ToString(), _deck.ElementAt(i).Suit, _deck.ElementAt(i).Value);
+            }*/
         }
 
         public ICard TakeCardFromTopOfPack() => throw new NotImplementedException();

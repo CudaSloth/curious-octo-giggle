@@ -8,6 +8,7 @@ namespace CodingChallenge.CardGame.Tests
         [Test]
         public void TestMethod1()
         {
+        
         }
     }
 }
