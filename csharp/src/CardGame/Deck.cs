@@ -146,8 +146,27 @@ namespace CodingChallenge.CardGame
 
         public ICard TakeCardFromTopOfPack()
         {
-            Card local = _deck.ElementAt(_deck.Count - 1);
-            _deck.RemoveAt(_deck.Count - 1);
+            Card local = null;
+            try
+            {
+                if (_deck.Count > 0)
+                {
+                    local = _deck.ElementAt(_deck.Count - 1);
+                    _deck.RemoveAt(_deck.Count - 1);
+                }
+                else if (_deck.Count == 0)
+                {
+                    //Do Nothing, cannot decrement
+                }
+                else
+                {
+                    //throw new IndexOutOfRangeException();                     Cannot assert with throws, use omit method instead by checking not -1
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Unknown exception caught in Card Discard!");
+            }
             return local;
         }
 

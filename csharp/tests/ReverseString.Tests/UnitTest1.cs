@@ -7,7 +7,7 @@ namespace CodingChallenge.ReversingString.Tests
     public class UnitTest1
     {
         [Test]
-        public void TestReverse_PassIfEqual()
+        public void TestReverse_ShouldPassIfEqual()
         {
             //Arrange
             string source = "FooBazQux";
@@ -21,7 +21,7 @@ namespace CodingChallenge.ReversingString.Tests
             Assert.AreEqual(expected, actual);
 
             //Verify
-            Console.WriteLine("The string [{0}] reversed as [{1}] : expected[{2}]", source, actual, expected);
+            //Console.WriteLine("The string [{0}] reversed as [{1}] : expected[{2}]", source, actual, expected);
         }
 
         [Test]
@@ -37,7 +37,7 @@ namespace CodingChallenge.ReversingString.Tests
             Assert.AreEqual(expected, actual = StringUtilities.Reverse(source));
 
             //Verify
-            Console.WriteLine("The string [{0}] reversed as [{1}] : expected[{2}]", source, actual, expected);
+            //Console.WriteLine("The string [{0}] reversed as [{1}] : expected[{2}]", source, actual, expected);
         }
 
         [Test]
@@ -55,14 +55,14 @@ namespace CodingChallenge.ReversingString.Tests
                 Assert.AreEqual(expected, actual = StringUtilities.Reverse(source));
 
                 //Verify
-                Console.WriteLine("The string [{0}] reversed as [{1}] : expected[{2}]", source, actual, expected);
+                //Console.WriteLine("The string [{0}] reversed as [{1}] : expected[{2}]", source, actual, expected);
             }
             catch(ArgumentException e)
             {
                 Assert.Throws<ArgumentException>(() => StringUtilities.Reverse(source));
 
                 //Verify
-                Console.WriteLine("The Null string was handled, cant reverse null!");
+                //Console.WriteLine("The Null string was handled, cant reverse null!");
             }
             catch(Exception e)
             {
