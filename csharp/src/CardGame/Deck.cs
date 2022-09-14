@@ -16,10 +16,14 @@ namespace CodingChallenge.CardGame
         public Deck()
         {
             _deck = new List<Card>();
+            Populate();
+            Shuffle();
         }
 
-        public bool Populate()
+        private void Populate()
         {
+            _deck.Clear();
+
             int total_iter = 0;
             for(int suit_iter = 0; suit_iter < 4; ++suit_iter)
             {
@@ -31,7 +35,6 @@ namespace CodingChallenge.CardGame
                     total_iter++;
                 }
             }
-            return true;
         }
 
         public IEnumerator<ICard> GetEnumerator()
@@ -51,6 +54,12 @@ namespace CodingChallenge.CardGame
             List<Card> _buffer1 = new List<Card>();
             List<Card> _buffer2 = new List<Card>();
             Random rnd = new Random();
+
+            //Identify Losses
+            if(_deck.Count != 52)
+            {
+                Populate();
+            }
 
             //Split deck
             for (int i = 0; i < 52; ++i)
@@ -135,7 +144,12 @@ namespace CodingChallenge.CardGame
             }*/
         }
 
-        public ICard TakeCardFromTopOfPack() => throw new NotImplementedException();
+        public ICard TakeCardFromTopOfPack()
+        {
+            Card local = _deck.ElementAt(_deck.Count - 1);
+            _deck.RemoveAt(_deck.Count - 1);
+            return local;
+        }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
