@@ -6,7 +6,14 @@ namespace CodingChallenge.ReversingString
     {
         public static string Reverse(string s)
         {
-            throw new NotImplementedException();
+            string s_local = "";
+
+            for(int i = 0; i < s.Length; ++i)
+            {
+                s_local += s.Substring((s.Length - i) - 1, 1);
+            }
+
+            return s_local;
         }
     }
 }
