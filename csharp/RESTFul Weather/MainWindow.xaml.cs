@@ -16,13 +16,27 @@ using System.Windows.Shapes;
 namespace RESTFul_Weather
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// View for the RESTful Weather app
+    /// UI Interaction Logic should be placed here
     /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Button Click!");
+            WeatherCore.getInstance().Start();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            //Console.WriteLine("Button Click!");
+            MessageBox.Show("Button Click!", "Message", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
+            WeatherCore.getInstance().Start();
         }
     }
 }
