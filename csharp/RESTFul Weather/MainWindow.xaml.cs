@@ -24,19 +24,18 @@ namespace RESTFul_Weather
         public MainWindow()
         {
             InitializeComponent();
+            WeatherCore.getInstance().Start();
+        }
+
+        private void Button_Request(object sender, RoutedEventArgs e)
+        {
+            WeatherCore.getInstance().Get(LatText.Text, LonText.Text);
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Button Click!");
-            WeatherCore.getInstance().Start();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            //Console.WriteLine("Button Click!");
-            MessageBox.Show("Button Click!", "Message", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
-            WeatherCore.getInstance().Start();
+            TZText.Text = WeatherCore.getInstance().getStringsAsString();
         }
     }
 }

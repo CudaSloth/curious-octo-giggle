@@ -5,61 +5,58 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RESTFul_Weather"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Border BorderBrush="Black" BorderThickness="1" Margin="10,10,347,10"/>
+        Title="MainWindow" Height="450" Width="450">
+    <Grid Margin="0,0,0,-6">
+        <Label Content="Location" HorizontalAlignment="Left" Margin="20,21,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="26" Width="58"/>
+        <Label Content="Latitude:" HorizontalAlignment="Left" Margin="20,44,0,0" VerticalAlignment="Top" Height="26" Width="56"/>
+        <Label Content="Longitude:" HorizontalAlignment="Left" Margin="20,67,0,0" VerticalAlignment="Top" Height="26" Width="66"/>
+        <Label Content="Time Zone:" HorizontalAlignment="Left" Margin="240,44,0,0" VerticalAlignment="Top" Height="26" Width="69"/>
+        <Label Content="UTC Offset:" HorizontalAlignment="Left" Margin="240,67,0,0" VerticalAlignment="Top" Height="26" Width="69"/>
+        <TextBox x:Name="LatText" HorizontalAlignment="Left" Margin="100,48,0,0" TextWrapping="Wrap" Text="33.44" VerticalAlignment="Top" Width="120" Height="18"/>
+        <TextBox x:Name="LonText" HorizontalAlignment="Left" Margin="100,71,0,0" TextWrapping="Wrap" Text="-94.04" VerticalAlignment="Top" Width="120" Height="18"/>
+        <TextBox x:Name="TZText" HorizontalAlignment="Left" Margin="320,48,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="320,71,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
 
+        <Label Content="Meteorological" HorizontalAlignment="Left" Margin="20,98,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="26" Width="96"/>
+        <Label Content="Current Time:" HorizontalAlignment="Left" Margin="20,120,0,0" VerticalAlignment="Top" Height="26" Width="81"/>
+        <Label Content="Sunrise Time:" HorizontalAlignment="Left" Margin="20,143,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+        <Label Content="Sunset Time:" HorizontalAlignment="Left" Margin="20,166,0,0" VerticalAlignment="Top" Height="26" Width="77"/>
+        <Label Content="Temp(Real):" HorizontalAlignment="Left" Margin="240,120,0,0" VerticalAlignment="Top" Height="26" Width="71"/>
+        <Label Content="Temp(Feel):" HorizontalAlignment="Left" Margin="240,143,0,0" VerticalAlignment="Top" Height="26" Width="70"/>
+        <Label Content="Schema:" HorizontalAlignment="Left" Margin="240,166,0,0" VerticalAlignment="Top" Height="26" Width="54"/>
+        <Label Content="Atmos. Pressure(hPa):" HorizontalAlignment="Left" Margin="20,189,0,0" VerticalAlignment="Top" Height="26" Width="124"/>
+        <Label Content="Humidity(%):" HorizontalAlignment="Left" Margin="20,212,0,0" VerticalAlignment="Top" Height="26" Width="78"/>
+        <Label Content="Dew Point:" HorizontalAlignment="Left" Margin="20,235,0,0" VerticalAlignment="Top" Height="26" Width="66"/>
+        <Label Content="Clouds(%):" HorizontalAlignment="Left" Margin="20,258,0,0" VerticalAlignment="Top" Height="26" Width="66"/>
+        <Label Content="UV Index:" HorizontalAlignment="Left" Margin="20,281,0,0" VerticalAlignment="Top" Height="26" Width="60"/>
+        <Label Content="Visibility(m):" HorizontalAlignment="Left" Margin="20,304,0,0" VerticalAlignment="Top" Height="26" Width="74"/>
+        <Label Content="Wind Speed(m/s):" HorizontalAlignment="Left" Margin="240,189,0,0" VerticalAlignment="Top" Height="26" Width="104"/>
+        <Label Content="Wind Gust(m/s):" HorizontalAlignment="Left" Margin="240,212,0,0" VerticalAlignment="Top" Height="26" Width="95"/>
+        <Label Content="Wind Direction(Degrees):" HorizontalAlignment="Left" Margin="240,235,0,0" VerticalAlignment="Top" Height="26" Width="143"/>
+        <Label Content="Rain(mm/h):" HorizontalAlignment="Left" Margin="240,258,0,0" VerticalAlignment="Top" Height="26" Width="75"/>
+        <Label Content="Snow(mm/h):" HorizontalAlignment="Left" Margin="240,281,0,0" VerticalAlignment="Top" Height="26" Width="81"/>
+        <Label Content="Forecast:" HorizontalAlignment="Left" Margin="240,304,0,0" VerticalAlignment="Top" Height="26" Width="56"/>
 
-        <Label Content="Location" HorizontalAlignment="Left" Margin="20,21,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="Latitude:" HorizontalAlignment="Left" Margin="20,44,0,0" VerticalAlignment="Top"/>
-        <Label Content="Longitude:" HorizontalAlignment="Left" Margin="20,67,0,0" VerticalAlignment="Top"/>
-        <Label Content="Time Zone:" HorizontalAlignment="Left" Margin="240,44,0,0" VerticalAlignment="Top"/>
-        <Label Content="UTC Offset:" HorizontalAlignment="Left" Margin="240,67,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="100,48,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="100,71,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="320,48,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="320,71,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-
-        <Label Content="Meteorological" HorizontalAlignment="Left" Margin="20,98,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="Current Time:" HorizontalAlignment="Left" Margin="20,120,0,0" VerticalAlignment="Top"/>
-        <Label Content="Sunrise Time:" HorizontalAlignment="Left" Margin="20,143,0,0" VerticalAlignment="Top"/>
-        <Label Content="Sunset Time:" HorizontalAlignment="Left" Margin="20,166,0,0" VerticalAlignment="Top"/>
-        <Label Content="Temp(Real):" HorizontalAlignment="Left" Margin="240,120,0,0" VerticalAlignment="Top"/>
-        <Label Content="Temp(Feel):" HorizontalAlignment="Left" Margin="240,143,0,0" VerticalAlignment="Top"/>
-        <Label Content="Schema:" HorizontalAlignment="Left" Margin="240,166,0,0" VerticalAlignment="Top"/>
-        <Label Content="Atmos. Pressure(hPa):" HorizontalAlignment="Left" Margin="20,189,0,0" VerticalAlignment="Top"/>
-        <Label Content="Humidity(%):" HorizontalAlignment="Left" Margin="20,212,0,0" VerticalAlignment="Top"/>
-        <Label Content="Dew Point:" HorizontalAlignment="Left" Margin="20,235,0,0" VerticalAlignment="Top"/>
-        <Label Content="Clouds(%):" HorizontalAlignment="Left" Margin="20,258,0,0" VerticalAlignment="Top"/>
-        <Label Content="UV Index:" HorizontalAlignment="Left" Margin="20,281,0,0" VerticalAlignment="Top"/>
-        <Label Content="Visibility(m):" HorizontalAlignment="Left" Margin="20,304,0,0" VerticalAlignment="Top"/>
-        <Label Content="Wind Speed(m/s):" HorizontalAlignment="Left" Margin="240,189,0,0" VerticalAlignment="Top"/>
-        <Label Content="Wind Gust(m/s):" HorizontalAlignment="Left" Margin="240,212,0,0" VerticalAlignment="Top"/>
-        <Label Content="Wind Direction(Degrees):" HorizontalAlignment="Left" Margin="240,235,0,0" VerticalAlignment="Top"/>
-        <Label Content="Rain(mm/h):" HorizontalAlignment="Left" Margin="240,258,0,0" VerticalAlignment="Top"/>
-        <Label Content="Snow(mm/h):" HorizontalAlignment="Left" Margin="240,281,0,0" VerticalAlignment="Top"/>
-        <Label Content="Forecast:" HorizontalAlignment="Left" Margin="240,304,0,0" VerticalAlignment="Top"/>
-
-        <TextBox HorizontalAlignment="Left" Margin="100,124,0,0" TextWrapping="Wrap" Text="Spacing Box" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="100,147,0,0" TextWrapping="Wrap" Text="Spacing Box" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="100,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="320,124,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="320,147,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="320,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="170,193,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-        <TextBox HorizontalAlignment="Left" Margin="170,216,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-        <TextBox HorizontalAlignment="Left" Margin="170,239,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-        <TextBox HorizontalAlignment="Left" Margin="170,262,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-        <TextBox HorizontalAlignment="Left" Margin="170,285,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-        <TextBox HorizontalAlignment="Left" Margin="170,308,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-        <TextBox HorizontalAlignment="Left" Margin="390,193,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-        <TextBox HorizontalAlignment="Left" Margin="390,216,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-        <TextBox HorizontalAlignment="Left" Margin="390,239,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-        <TextBox HorizontalAlignment="Left" Margin="390,262,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-        <TextBox HorizontalAlignment="Left" Margin="390,285,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
-        <TextBox HorizontalAlignment="Left" Margin="320,308,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="597,280,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
-
+        <TextBox HorizontalAlignment="Left" Margin="100,124,0,0" TextWrapping="Wrap" Text="Spacing Box" VerticalAlignment="Top" Width="120" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="100,147,0,0" TextWrapping="Wrap" Text="Spacing Box" VerticalAlignment="Top" Width="120" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="100,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="320,124,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="320,147,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="320,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="170,193,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="170,216,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="170,239,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="170,262,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="170,285,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="170,308,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="390,193,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="390,216,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="390,239,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="390,262,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="390,285,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="320,308,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
+        <Button Content="Request Data" HorizontalAlignment="Left" Margin="340,404,0,0" VerticalAlignment="Top" Click="Button_Request" Width="100" Height="20"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="340,331,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
 
     </Grid>
 </Window>

@@ -11,7 +11,7 @@ namespace RESTFul_Weather
     /// Model for the RESTful Weather app
     /// Application Logic should be implemented here
     /// </summary>
-    internal class WeatherCore :IModule
+    internal class WeatherCore :IModule, IRestful
     {
         private static WeatherCore _this;
         private WeatherEngine _weatherEngine;
@@ -39,5 +39,18 @@ namespace RESTFul_Weather
         }
 
         public void Stop() => throw new NotImplementedException();
+
+        public string getStringsAsString()
+        {
+            return _weatherEngine.getStringsAsString();
+        }
+
+        public void Get(string lat, string lon)
+        {
+            _weatherEngine.Get(lat, lon);
+        }
+        public void Put() => throw new NotImplementedException();
+        public void Delete() => throw new NotImplementedException();
+        public void Post() => throw new NotImplementedException();
     }
 }
