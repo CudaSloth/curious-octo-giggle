@@ -35,12 +35,12 @@ namespace RESTFul_Weather
         public void Start()
         {
             _weatherEngine.Start();
-            MessageBox.Show("WeatherCore Started", "Message", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
+            //MessageBox.Show("WeatherCore Started", "Message", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
         }
 
         public void Stop() => throw new NotImplementedException();
 
-        public string getStringsAsString()
+        public string getStringsAsString() //Deprecated, will remove, testing only
         {
             return _weatherEngine.getStringsAsString();
         }
@@ -48,6 +48,10 @@ namespace RESTFul_Weather
         public void Get(string lat, string lon)
         {
             _weatherEngine.Get(lat, lon);
+        }
+        public APIObject GetFromFile(string filename)
+        {
+            return _weatherEngine.GetFromFile(filename);
         }
         public void Put() => throw new NotImplementedException();
         public void Delete() => throw new NotImplementedException();

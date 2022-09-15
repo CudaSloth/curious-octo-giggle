@@ -15,7 +15,7 @@
         <TextBox x:Name="LatText" HorizontalAlignment="Left" Margin="100,48,0,0" TextWrapping="Wrap" Text="33.44" VerticalAlignment="Top" Width="120" Height="18"/>
         <TextBox x:Name="LonText" HorizontalAlignment="Left" Margin="100,71,0,0" TextWrapping="Wrap" Text="-94.04" VerticalAlignment="Top" Width="120" Height="18"/>
         <TextBox x:Name="TZText" HorizontalAlignment="Left" Margin="320,48,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
-        <TextBox HorizontalAlignment="Left" Margin="320,71,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
+        <TextBox x:Name="UTCOffsetText" HorizontalAlignment="Left" Margin="320,71,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
 
         <Label Content="Meteorological" HorizontalAlignment="Left" Margin="20,98,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="26" Width="96"/>
         <Label Content="Current Time:" HorizontalAlignment="Left" Margin="20,120,0,0" VerticalAlignment="Top" Height="26" Width="81"/>
@@ -37,26 +37,26 @@
         <Label Content="Snow(mm/h):" HorizontalAlignment="Left" Margin="240,281,0,0" VerticalAlignment="Top" Height="26" Width="81"/>
         <Label Content="Forecast:" HorizontalAlignment="Left" Margin="240,304,0,0" VerticalAlignment="Top" Height="26" Width="56"/>
 
-        <TextBox HorizontalAlignment="Left" Margin="100,124,0,0" TextWrapping="Wrap" Text="Spacing Box" VerticalAlignment="Top" Width="120" Height="18"/>
-        <TextBox HorizontalAlignment="Left" Margin="100,147,0,0" TextWrapping="Wrap" Text="Spacing Box" VerticalAlignment="Top" Width="120" Height="18"/>
-        <TextBox HorizontalAlignment="Left" Margin="100,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
-        <TextBox HorizontalAlignment="Left" Margin="320,124,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
-        <TextBox HorizontalAlignment="Left" Margin="320,147,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
-        <TextBox HorizontalAlignment="Left" Margin="320,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
-        <TextBox HorizontalAlignment="Left" Margin="170,193,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
-        <TextBox HorizontalAlignment="Left" Margin="170,216,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
-        <TextBox HorizontalAlignment="Left" Margin="170,239,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
-        <TextBox HorizontalAlignment="Left" Margin="170,262,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
-        <TextBox HorizontalAlignment="Left" Margin="170,285,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
-        <TextBox HorizontalAlignment="Left" Margin="170,308,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
-        <TextBox HorizontalAlignment="Left" Margin="390,193,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
-        <TextBox HorizontalAlignment="Left" Margin="390,216,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
-        <TextBox HorizontalAlignment="Left" Margin="390,239,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
-        <TextBox HorizontalAlignment="Left" Margin="390,262,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
-        <TextBox HorizontalAlignment="Left" Margin="390,285,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
-        <TextBox HorizontalAlignment="Left" Margin="320,308,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
+        <TextBox x:Name="CurrTimeText" HorizontalAlignment="Left" Margin="100,124,0,0" TextWrapping="Wrap" Text="Spacing Box" VerticalAlignment="Top" Width="120" Height="18"/>
+        <TextBox x:Name="SunriseTimeText" HorizontalAlignment="Left" Margin="100,147,0,0" TextWrapping="Wrap" Text="Spacing Box" VerticalAlignment="Top" Width="120" Height="18"/>
+        <TextBox x:Name="SunsetTimeText" HorizontalAlignment="Left" Margin="100,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
+        <TextBox x:Name="TempRealText" HorizontalAlignment="Left" Margin="320,124,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
+        <TextBox x:Name="TempFeelText" HorizontalAlignment="Left" Margin="320,147,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
+        <TextBox x:Name="SchemaText" HorizontalAlignment="Left" Margin="320,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
+        <TextBox x:Name="AtmoPressText" HorizontalAlignment="Left" Margin="170,193,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox x:Name="HumidityText" HorizontalAlignment="Left" Margin="170,216,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox x:Name="DPText" HorizontalAlignment="Left" Margin="170,239,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox x:Name="CloudsText" HorizontalAlignment="Left" Margin="170,262,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox x:Name="UVIText" HorizontalAlignment="Left" Margin="170,285,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox x:Name="VisibilityText" HorizontalAlignment="Left" Margin="170,308,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox x:Name="WindSpeedText" HorizontalAlignment="Left" Margin="390,193,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox x:Name="WindGustText" HorizontalAlignment="Left" Margin="390,216,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox x:Name="WindDirText" HorizontalAlignment="Left" Margin="390,239,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox x:Name="RainText" HorizontalAlignment="Left" Margin="390,262,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox x:Name="SnowText" HorizontalAlignment="Left" Margin="390,285,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="18"/>
+        <TextBox x:Name="ForecastText" HorizontalAlignment="Left" Margin="320,308,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
         <Button Content="Request Data" HorizontalAlignment="Left" Margin="340,404,0,0" VerticalAlignment="Top" Click="Button_Request" Width="100" Height="20"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="340,331,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+        <Button Content="Use Cached" HorizontalAlignment="Left" Margin="340,379,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
 
     </Grid>
 </Window>

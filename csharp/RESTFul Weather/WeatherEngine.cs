@@ -5,6 +5,8 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace RESTFul_Weather
 {
@@ -29,7 +31,7 @@ namespace RESTFul_Weather
         private const string URL_3 = "&exclude=hourly,daily";
         private const string URL_4 = "&appid=";
         private string URL_Full = "";
-        private List<string> urlParameters;
+        //private List<string> urlParameters;
 
 
         HttpClient thisHttpClient;
@@ -59,17 +61,56 @@ namespace RESTFul_Weather
             URL_Full = URL_1a + lat + URL_2 + lon + URL_4 + APIKey;
             thisHttpClient.BaseAddress = new Uri(URL_1);
             thisHttpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+            thisHttpClient.DefaultRequestHeaders.Add("Authorization", String.Format("Basic {0}", APIKey));
             thisHttpResponse = thisHttpClient.GetAsync(URL_Full).Result;
             if(thisHttpResponse.IsSuccessStatusCode)
             {
-                var dataObjects = thisHttpResponse.Content.ReadAsAsync<IEnumerable<DataObject>>().Result;  //Make sure to add a reference to System.Net.Http.Formatting.dll
+                var dataObjects = thisHttpResponse.Content.ReadAsAsync<IEnumerable<DataObject>>().Result; 
                 foreach (var d in dataObjects)
                 {
                     objectStrings.Add(d.Name);
                     MessageBox.Show(d.Name, "Message", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
                 }    
             }
-            MessageBox.Show(thisHttpResponse.ToString(), "Message", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
+            else
+            {
+                MessageBox.Show(thisHttpResponse.ToString(), "Message", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
+            }
+            
+        }
+        public APIObject GetFromFile(string filename)
+        {
+            string text = System.IO.File.ReadAllText(filename);
+            APIObject m = new APIObject();
+            try
+            {
+                JObject jsonArray = JObject.Parse(text);
+                
+                m.lat = jsonArray.SelectToken("lat").Value<string>();
+                m.lon = jsonArray.SelectToken("lon").Value<string>();
+                m.timezone = jsonArray.SelectToken("timezone").Value<string>();
+                m.timezone_offset = jsonArray.SelectToken("timezone_offset").Value<string>();
+                m.current.dt = jsonArray.SelectToken("$.current.dt").Value<string>();
+                m.current.sunrise = jsonArray.SelectToken("$.current.sunrise").Value<string>();
+                m.current.sunset = jsonArray.SelectToken("$.current.sunset").Value<string>();
+                m.current.temp = jsonArray.SelectToken("$.current.temp").Value<string>();
+                m.current.feels_like = jsonArray.SelectToken("$.current.feels_like").Value<string>();
+                m.current.pressure = jsonArray.SelectToken("$.current.pressure").Value<string>();
+                m.current.humidity = jsonArray.SelectToken("$.current.humidity").Value<string>();
+                m.current.dew_point = jsonArray.SelectToken("$.current.dew_point").Value<string>();
+                m.current.uvi = jsonArray.SelectToken("$.current.uvi").Value<string>();
+                m.current.clouds = jsonArray.SelectToken("$.current.clouds").Value<string>();
+                m.current.visibility = jsonArray.SelectToken("$.current.visibility").Value<string>();
+                m.current.wind_speed = jsonArray.SelectToken("$.current.wind_speed").Value<string>();
+                m.current.wind_deg = jsonArray.SelectToken("$.current.wind_deg").Value<string>();
+                m.current.weather.main = jsonArray.SelectToken("$.current.weather.main").Value<string>();
+            }
+            catch(Exception e)
+            {
+
+            }
+
+            return m;
         }
         public void Post() => throw new NotImplementedException();
         public void Put() => throw new NotImplementedException();
@@ -78,13 +119,13 @@ namespace RESTFul_Weather
         {
             thisHttpClient = new HttpClient();
             objectStrings = new List<string>();
-            urlParameters = new List<string>();
-            MessageBox.Show("WeatherEngine Started", "Message", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
+            //urlParameters = new List<string>();
+            //MessageBox.Show("WeatherEngine Started", "Message", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
         }
 
         public void Stop() => throw new NotImplementedException();
 
-        public string getStringsAsString()
+        public string getStringsAsString() //Deprecated, will remove, testing only
         {
             string s = "";
             for(int i = 0; i < objectStrings.Count; ++i)
